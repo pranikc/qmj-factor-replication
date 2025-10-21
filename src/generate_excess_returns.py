@@ -184,8 +184,8 @@ def generate_excess_returns(data):
         6: 0.45, 7: 0.57, 8: 0.47, 9: 0.58, 10: 0.61
     }
 
-    print(f"\n{'Portfolio':<12} {'Mean':<8} {'Target':<8} {'Error':<10} {'t-stat':<8} {'Std':<8} {'Sharpe':<14} {'Status':<8}")
-    print("-" * 88)
+    print(f"\n{'Portfolio':<12} {'Mean':<8} {'Target':<8} {'Error':<10} {'t-stat':<8} {'Std':<8} {'Sharpe':<14}")
+    print("-" * 80)
 
     for i in range(1, 11):
         col = f'portfolio_{i}'
@@ -196,14 +196,12 @@ def generate_excess_returns(data):
             mean = excess.mean()
             std = excess.std()
             t_stat = mean / (std / np.sqrt(len(excess)))
-            sharpe = mean / std if std > 0 else 0
+            sharpe = np.sqrt(12)*mean / std if std > 0 else 0 # annualized
 
             target = targets[i]
             error = (mean - target) * 100  # In basis points
 
-            status = "Pass" if abs(error) < 5 else "Warn" if abs(error) < 15 else "Fail"
-
-            print(f"P{i:<11} {mean:>7.3f}% {target:>7.2f}% {error:>9.1f} bps {t_stat:>7.2f} {std:>7.2f}% {sharpe:>13.3f} {status:<8}")
+            print(f"P{i:<11} {mean:>7.3f}% {target:>7.2f}% {error:>9.1f} bps {t_stat:>7.2f} {std:>7.2f}% {sharpe:>13.3f}")
 
             results.append({
                 'portfolio': f'P{i}',
@@ -216,21 +214,19 @@ def generate_excess_returns(data):
             })
 
     # QMJ Factor
-    print("-" * 88)
+    print("-" * 80)
     if 'qmj' in merged.columns:
         qmj_excess = merged['qmj'] * 100  # Already in monthly returns
 
         qmj_mean = qmj_excess.mean()
         qmj_std = qmj_excess.std()
         qmj_t_stat = qmj_mean / (qmj_std / np.sqrt(len(qmj_excess)))
-        qmj_sharpe = qmj_mean / qmj_std if qmj_std > 0 else 0
+        qmj_sharpe = np.sqrt(12)*qmj_mean / qmj_std if qmj_std > 0 else 0 # annnualized
 
         qmj_target = 0.47
         qmj_error = (qmj_mean - qmj_target) * 100
 
-        status = "Pass" if abs(qmj_error) < 5 else "Warn" if abs(qmj_error) < 15 else "Fail"
-
-        print(f"{'QMJ (10-1)':<12} {qmj_mean:>7.3f}% {qmj_target:>7.2f}% {qmj_error:>9.1f} bps {qmj_t_stat:>7.2f} {qmj_std:>7.2f}% {qmj_sharpe:>13.3f} {status:<8}")
+        print(f"{'QMJ (10-1)':<12} {qmj_mean:>7.3f}% {qmj_target:>7.2f}% {qmj_error:>9.1f} bps {qmj_t_stat:>7.2f} {qmj_std:>7.2f}% {qmj_sharpe:>13.3f}")
 
         results.append({
             'portfolio': 'QMJ',
