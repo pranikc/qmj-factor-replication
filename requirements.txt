@@ -1,0 +1,32 @@
+# QMJ Replication Requirements
+# Python 3.8+ required
+
+# Core Data Science
+pandas>=1.5.0
+numpy>=1.23.0
+scipy>=1.9.0
+
+# Database and Data Access
+sqlalchemy>=1.4.0
+psycopg2-binary>=2.9.0  # For PostgreSQL (WRDS)
+wrds>=3.1.0  # Official WRDS Python package
+
+# Statistical Analysis
+statsmodels>=0.13.0
+
+# Utilities
+python-dateutil>=2.8.0
+pyarrow>=10.0.0  # For parquet files
+tqdm>=4.64.0  # Progress bars
+
+# Optional but recommended
+matplotlib>=3.6.0  # For visualizations
+seaborn>=0.12.0  # For enhanced plotting
+jupyter>=1.0.0  # For interactive analysis
+
+# Installation:
+# pip install -r requirements.txt
+#
+# Or with conda:
+# conda install pandas numpy scipy statsmodels matplotlib seaborn jupyter
+# pip install wrds psycopg2-binary pyarrow tqdm
