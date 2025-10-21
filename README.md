@@ -143,4 +143,3 @@ About 2.6 million firm-month observations across ~20,000 unique stocks. Not simu
 - **Data vintage**: Using current WRDS data, not 2012-2013 vintage
 - **Some portfolios off by 5-9 bps**: Likely due to above plus undocumented filters
 - **Directional consistency**: 7 out of 9 interior portfolios match paper direction
-- **P3-P4 reversal**: Persistent across methodologies, unclear source
