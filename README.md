@@ -101,9 +101,6 @@ Compustat data gets restated retroactively. The authors used 2012-2013 vintage d
 ### 5. Lagging and Timing
 Financial statement data must be lagged properly - assume 6-month delay for annual data to be publicly available. Point-in-time data issues are subtle but matter.
 
-### 6. The P3-P4 Reversal
-P4 returns are consistently lower than P3 in my replication. Tried many specifications - this pattern persists. Likely due to data vintage or some undocumented filter in the original paper.
-
 ## What I Tried That Didn't Work
 
 - **Equal-weighted portfolios**: Made everything worse
@@ -127,8 +124,7 @@ qmj_replication_FINAL/
 │   ├── utils.py              # Helper functions (winsorization, z-scoring)
 │   └── generate_excess_returns.py  # Main script that ties everything together
 ├── data/                      # Cached data (not in repo, created by scripts)
-├── output/                    # Results and diagnostics
-└── docs/                      # Methodology notes and guides
+└── output/                    # Results and diagnostics
 ```
 
 The pipeline runs in three stages: data extraction from WRDS, quality score calculation, and portfolio formation with excess return computation.
