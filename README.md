@@ -1,10 +1,10 @@
-# Quality Minus Junk (QMJ) Table IV Replication
+# Quality Minus Junk (QMJ) Paper Replication
 
-Replication of Table IV (Panel A) from Asness, Frazzini, and Pedersen (2019), "Quality minus junk," *Review of Accounting Studies*.
+Replication of quality-sorted portfolio returns from Asness, Frazzini, and Pedersen (2019), "Quality minus junk," *Review of Accounting Studies*.
 
-## What This Replicates
+## Overview
 
-Table IV shows portfolio-level returns when stocks are sorted by a composite quality score. The quality score combines four fundamental measures:
+This project constructs 10 value-weighted portfolios of U.S. stocks sorted by a composite quality score over the period 1956-2012. The quality score combines four fundamental measures:
 - **Profitability**: Return on equity, gross profits/assets, cash flow/assets
 - **Growth**: 5-year growth in profitability metrics
 - **Safety**: Low leverage, low volatility, low beta
