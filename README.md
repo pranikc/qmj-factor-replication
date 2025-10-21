@@ -16,17 +16,17 @@ The paper constructs 10 portfolios from lowest quality (P1, "junk") to highest q
 
 | Portfolio | My Return | Paper Target | Error (bps) | t-stat | Std Dev | Sharpe |
 |-----------|-----------|--------------|-------------|---------|---------|---------|
-| P1 (Junk) | 0.119% | 0.15% | -3.1 | 0.43 | 7.25% | 0.06 |
-| P2 | 0.324% | 0.36% | -3.6 | 1.28 | 6.54% | 0.17 |
-| P3 | 0.422% | 0.38% | +4.2 | 1.71 | 6.40% | 0.23 |
-| P4 | 0.339% | 0.39% | -5.1 | 1.53 | 5.74% | 0.20 |
-| P5 | 0.509% | 0.45% | +5.9 | 2.50 | 5.28% | 0.33 |
-| P6 | 0.542% | 0.45% | +9.2 | 2.78 | 5.06% | 0.37 |
-| P7 | 0.565% | 0.57% | -0.5 | 3.11 | 4.70% | 0.42 |
-| P8 | 0.493% | 0.47% | +2.3 | 2.74 | 4.67% | 0.37 |
-| P9 | 0.499% | 0.58% | -8.1 | 2.99 | 4.32% | 0.40 |
-| P10 (Quality) | 0.551% | 0.61% | -5.9 | 3.40 | 4.20% | 0.45 |
-| **QMJ (10-1)** | **0.432%** | **0.47%** | **-3.8** | **2.25** | **4.97%** | **0.09** |
+| P1 (Junk) | 0.119% | 0.15% | -3.1 | 0.43 | 7.25% | 0.057 |
+| P2 | 0.324% | 0.36% | -3.6 | 1.28 | 6.54% | 0.171 |
+| P3 | 0.422% | 0.38% | +4.2 | 1.71 | 6.40% | 0.228 |
+| P4 | 0.339% | 0.39% | -5.1 | 1.53 | 5.74% | 0.204 |
+| P5 | 0.509% | 0.45% | +5.9 | 2.50 | 5.28% | 0.334 |
+| P6 | 0.542% | 0.45% | +9.2 | 2.78 | 5.06% | 0.371 |
+| P7 | 0.565% | 0.57% | -0.5 | 3.11 | 4.70% | 0.416 |
+| P8 | 0.493% | 0.47% | +2.3 | 2.74 | 4.67% | 0.366 |
+| P9 | 0.499% | 0.58% | -8.1 | 2.99 | 4.32% | 0.400 |
+| P10 (Quality) | 0.551% | 0.61% | -5.9 | 3.40 | 4.20% | 0.455 |
+| **QMJ (10-1)** | **0.432%** | **0.47%** | **-3.8** | **2.25** | **4.97%** | **0.301** |
 
 Mean absolute error: 4.8 basis points across the 10 portfolios and QMJ factor.
 
@@ -131,7 +131,7 @@ qmj_replication_FINAL/
 └── docs/                      # Methodology notes and guides
 ```
 
-Code is commented pretty heavily - read through `generate_table_iv.py` for the main flow, then dive into component scripts as needed.
+The pipeline runs in three stages: data extraction from WRDS, quality score calculation, and portfolio formation with excess return computation.
 
 ## Data Source
 
